@@ -1,14 +1,14 @@
 <?php
 
-namespace Operador\Operadors;
+namespace Operador\Pipelines;
 
 use Log;
 use App\Models\User;
-use Operador\Contracts\PipelineBuilder as PipelineBuilderBase;
+
 use App\Pipelines\Contracts\Registrator;
 use App\Pipelines\Contracts\Notificator;
 
-class PostCreator extends PipelineBuilderBase
+class PostCreator extends Pipeline
 {
     public static function getPipelines()
     {

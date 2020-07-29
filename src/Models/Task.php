@@ -10,14 +10,14 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Finder\Models\Digital\Bot;
+namespace Operador\Models;
 
-use Muleta\Traits\Models\ComplexRelationamentTrait;
 use Support\Models\Base;
+use Support\Contracts\Output\OutputableTrait;
 
 class Task extends Base
 {
-    use ComplexRelationamentTrait;
+    use OutputableTrait;
 
     protected $organizationPerspective = true;
 

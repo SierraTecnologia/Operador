@@ -3,15 +3,15 @@
  * 
  */
 
-namespace Operador\Operadors;
+namespace Operador\Pipelines;
 
-use Operador\Contracts\PipelineBuilder as PipelineBuilderBase;
-use League\Pipeline\StageInterface;
+use League\Pipeline\Pipeline as PipelineBase;
+use Operador\Contracts\StageInterface;
 use League\Pipeline\PipelineBuilder;
 
 use Log;
 
-class ArticlePipeline extends PipelineBuilderBase
+class ArticlePipeline extends Pipeline
 {
     public function getPipeline()
     {

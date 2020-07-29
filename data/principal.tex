@@ -1,0 +1,221 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX book template                           %%
+%% Author:  Amber Jain (http://amberj.devio.us/) %%
+%% License: ISC license                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[
+    % -- opções da classe memoir --
+    12pt,               % tamanho da fonte
+    % openright,            % capítulos começam em pág ímpar (insere página vazia caso preciso)
+    oneside,            % para impressão somente frente. Oposto a twoside (frente e verso)
+    a4paper,            % tamanho do papel. 
+    % -- opções da classe abntex2 --
+    %chapter=TITLE,     % títulos de capítulos convertidos em letras maiúsculas
+    %section=TITLE,     % títulos de seções convertidos em letras maiúsculas
+    %subsection=TITLE,  % títulos de subseções convertidos em letras maiúsculas
+    %subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+    % -- opções do pacote babel --
+    english,            % idioma adicional para hifenização
+    french,             % idioma adicional para hifenização
+    spanish,            % idioma adicional para hifenização
+    brazil,             % o último idioma é o principal do documento
+    ]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{verbatim}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Source: http://en.wikibooks.org/wiki/LaTeX/Hyperlinks %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[brazil]{babel}
+\usepackage{float}
+
+
+
+\begin{document}
+
+\input{./title.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Auto-generated table of contents, list of figures and list of tables %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\listoffigures
+\pagebreak
+
+
+\section{Introdução}
+\textit{Nesta sessão você quer explicar de forma clara a entrega e os objetivos.
+É com base nestes objetivos que você pode debater se algo era do objetivo do projeto ou não, eles também serão melhores descritos na descrição do problema.}
+
+Este documento específica uma proposta de prestação de serviço a fim de \textbf{Fazer a coisa que vão te pagar para fazer}.
+
+O produto final desta proposta caso seja aceita é um
+artefato de software e após validação a sua documentação.
+
+\section{Descrição do problema}
+    O principal problema enfrentado é \textbf{\textit{descreva o problema em sí, não a solução aqui}}. \textit{É nessa parte que é demonstrado o seu domínio sobre o problema e também te força a realmente olhar o projeto para evitar surpresas.}
+    
+    Este problema está descrito de forma geral na \autoref{fig:diagrama0}.
+    
+      \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{./diagrama0}
+        \caption{Diagrama geral do problema}
+        \label{fig:diagrama0}
+    \end{figure}
+    
+    Outros problemas previstos são:
+    \begin{itemize}
+        \item \textbf{Problema 1} - A descrição do problema a esquerda;
+        \item \textbf{Problema 2} - Outra descrição do problema a esquerda;
+    \end{itemize}
+    
+    \textit{Sinta-se livre para destrinchar quantos problemas quiser, e colocar diagramas e etc, só tome cuidado para não dar a solução completa do problema sendo específico demais}
+    
+\section{Proposta de soluções}
+    
+    \textit{ Use diagramas se necessário como por exemplo \autoref{fig:diagrama1}.}
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{./diagrama1}
+        \caption{Diagrama geral da solução}
+        \label{fig:diagrama1}
+    \end{figure}
+    
+   \textit{Após descrever a solução de modo geral adentre outros pontos centrais em mais detalhes. É esse o ponto de dar ao cliente a idéia do que ele está comprando, ele já sabe o que ele tem de problema ele só não sabe a solução}
+   
+   \textit{Se você está fornecendo algo mensurável como por exemplo diminuir a latência do site, ou otimizar algo aqui é uma boa hora para explicitar esses valores}.
+   
+   \textit{A idéia da parte de soluções, além de especificar o escopo, é de deixar claro as diversas coisas de valor que o cliente está comprando, ao cobrarmos por hora muitas vezes isso fica implicíto e o cliente pode nem perceber o real valor daquele projeto}.
+   
+    \subsection{Exemplo de tópico - Modificações do código atual}
+    
+        \textit{Por exemplo uma das preocupações pode ser como lidar com código legado, aqui na descrição do problema você pode descrever algumas obrigações dos clientes por exemplo:}
+        
+        \textit{"Dado que esta solução terá que ser implementada em conjunto com o sistema existente é necessário o acesso as APIs e bancos de dados e ajuda da equipe interna.". Aqui você deixa claro o que precisa ser feito não necessariamente como ou quanto tempo vai levar mas sim uma solução de um ponto nerval que ele está comprando}
+    
+    \subsection{Outra especificações das soluções}
+    
+        \textit{Adentre mais a fundo em outros problemas para tanto você quanto o cliente terem uma idéia do tamanho do projeto e de quais os possíveis riscos, de forma geral cada seção aqui é um potencial membro de algum escopo}
+    
+\section{Plano de comunicação}
+    A comunicação se dará preferencialmente por e-mail, sendo que é garantido durante a duração do projeto a resposta em até 24 horas por parte do desenvolvedor e desejável a resposta em até 48 horas por parte do cliente.
+    
+    Reuniões podem ser agendadas mediante acordo de ambas as partes sendo preferível reuniões virtuais a presenciais.
+    
+    A comunicação instantânea se dará por meio do slack do projeto localizado em \textit{seuprojeto-slack.com.}.
+    
+    \textit{Caso seja necessário viagens é um bom ponto limitar o número de viagens e adicionar ao custo, ou colocar algum termo que cobre suas despesas de deslocamento e hospedagem}.
+    
+    \section{Sobre a documentação}
+    A documentação será entrege \textit{3 meses (sinta-se livre para mudar isso)} após a aprovação final do projeto.
+    
+    A documentação é feita utilizandos-se do latex e o código fonte dela encontra-se em um arquivo comprimido junto com a entrega final.\\
+    A instalação do latex e dos diversos pacotes aqui utilizados é um processo laboroso sendo que recomenda utilizar-se um editor online ou serviço de edição como o \href{https://www.sharelatex.com}{ShareLaTex}.
+    
+    As outras documentações são geradas através de \textit{\href{http://usejsdoc.org/}{JsDocs} ou \href{http://doxygen.org}{DoXygen}.}
+    
+    \subsection{Outras formas de documentação}
+    Há também alguns comentários em códigos ou readmes nos projetos, além dos diagramas desta documentação.
+    
+    \subsection{Informação pendente}
+    Caso alguma informação seja dada como faltante é pedido que seja comunicado o mais prontamente para que a compilação da documentação seja completa e abrangente.
+    
+    \section{Obrigações e garantias}
+    
+        \subsection{Por parte do cliente}
+            O cliente garante que todas as informações necessárias foram fornecidas e que nenhuma informação relevante foi retida para uso posterior.
+            
+            O cliente garante acesso aos sistemas, códigos e serviços necessários ou a um \textit{dump} que reflita a realidade dos mesmos.
+            
+            O cliente garante o pagamento total nas datas acordadas a não ser em caso de aditivos ou de termos adicionais acordados por ambas as partes.
+        
+    \subsection{Por parte do desenvolvedor}
+    
+    O desenvolvedor se compromete a manter a confidencialidade de dados sigilosos provenientes do cliente.
+    
+    O desenvolvedor se compromete a dar todo o código fonte e informações necessárias do projeto para o cliente após o término do projeto.
+    
+    Em caso de insatisfação com o projeto o desenvolvedor se compromete a terminar o escopo acordado independentemente de quando o último pagamento foi feito.
+    
+    Em caso de insatisfação o cliente pode também optar por receber uma parcela do último pagamento ou se abster de algum pagamento mediante acordo de ambas as partes. Neste caso o término do projeto é abdicado, os códigos e documentações até o ponto de término são entregues e não há mais nenhuma obrigação adicional por ambas as partes.
+    
+    \subsection{Término antecipado}
+    
+        Caso o projeto seja terminado mais cedo do que o orçado seja pelo fato de ter atingido os objetivos antes do previsto, decisões estratégias ou qualquer desejo do cliente o preço total deve ser pago. Este termo pode ser modificado posteriormente por ambas as partes.
+
+    
+    \section{Proposta, preços e prazos}
+			\subsection{Validade dos valores e prazos}
+				A validade dos valores e prazos é de 40 dias corridos, após isso não há nenhuma garantia de disponibilidade ou preço. \textbf{\textit{SEMPRE coloque uma clausula como essa, do contrário o cliente pode aparecer anos depois achando que você ainda toparia isso}}
+			\subsection{Modelo de preços}
+				Os preços abaixo seguem o modelo de \textbf{Preço Alvo} ou seja não mudando o escopo,requisições ou situação é \textbf{garantido} que o preço não passará deste valor.
+		
+		    \subsection{Propostas}
+		    
+		    São oferecidas 3 opções de propostas, estas propostas são exclusivas para o cliente e projeto atual. \textit{São oferecidas 3 propostas normalmente para o cliente poder fazer uma escolha, eu explico melhor a diferença delas abaixo}.
+		    \textit{Em escopo você não descreverá o escopo mas referenciará as partes da propsota de implementação, por exemplo você pode colocar uma parte chamada "microsservices" e só falar que fará uma abordagem de microsservices na proposta 3}
+		    
+		    \subsubsection{Proposta 1}
+		    \textit{Essa proposta deve ser o minímo possível, é a proposta que você faria caso o cliente "Chorasse o preço", normalmente você vai exigir algum prazo mais flexível, uma condição de pagamento mais atraente para você ou um relaxamento do escopo}. \\
+		    
+		    \textbf{Escopo:} \textit{Aqui na proposta mais barata você pode inclusive tentar tirar uma parte do escopo de forma que consiga diminuir o custo ou o risco, como o preço é mais barato é uma escolha que o cliente terá que fazer, de qualquer forma esse escopo definitivamente resolve o problema apenas talvez não tenha tudo que o cliente deseja.}. \\
+		    
+		    
+		    \textbf{Preço:} R\$ \$\$. \\
+		    
+		    
+		    \textbf{Prazo:} \textit{Um prazo bastante confortável para você que caiba na deadline} \\
+		    
+		    
+		    \textbf{Termos de pagamento}: 1 vez ao iniciar o projeto. \\
+		    
+		    
+    	    \subsubsection{Proposta 2}
+    	    \textit{Essa deve ser a proposta razoável, mais ou menos exatamente o que o cliente pediu}. \\
+    	    
+    	    
+    	    \textbf{Escopo:} \textit{Normalmente exatamente o que o cliente precisa, todos os "must haves", talvez você remova os "seria legal ter mas eu sobrevivo sem" caso não seja atraente fazer isso por esse preço}. \\
+    	    
+    	    
+    	    \textbf{Preço} R\$ \$\$\$. \\
+    	    
+    	    
+    	    \textbf{Prazo:} \textit{Idealmente a deadline do cliente ou um pouco antes}. \\
+    	    
+    	    
+    	    \textbf{Termos de pagamento}: \textit{X vezes, uma no início do projeto, outra 30 dias após, outra 60 dias após o início etc. É importante evitar atrelar a forma de pagamento a entrega final, uma vez que o cliente pode segurar algo para o final e te atrasar indefinidamente} \\
+    	    
+    	    \subsubsection{Proposta 3}
+    	    \textit{Essa é a proposta mais cara e com maior valor para o cliente, eu costumo colocar aqui também algumas das coisas que "Seria legal ter mas eu sobrevivo sem", ou um maior acesso a mim após o termino do projeto e etc. Pense nisso como  a diferença entre a classe econômica e a primeira classe} \\
+    	    
+    	    \textbf{Escopo:} \textit{Aqui é o escopo completo da proposta 2 e as vezes algo a mais, por exemplo a instalação ou alguma funcionalidade extra que é possível que não seja imediatamente necessária} \\
+    	    
+    	    \textbf{Preço:} R\$ \$\$\$\$\$ \\
+    	    
+    	    \textbf{Prazo:} \textit{Depende do projeto, as vezes essa opção mais cara é aquela que me forçaria a trabalhar no fim de semana ou a fazer alguma parceria com outro desenvolvedor. Certamente antes da deadline ao menos a primeira entrega} \\
+    	    
+    	    \textbf{Termos de pagamento:} \textit{Normalmente esse termo por ter um valor maior precisará ser um pouco mais factível para o cliente, eu costumo cobrar um valor grande no início do projeto e parcelar mensalmente o restante}.
+
+			\subsection{Forma de pagamento}
+				Depósito em conta \\
+				
+				\textbf{Banco}: Banco 
+				
+				\textbf{Agência} 1234 
+				
+				\textbf{Conta} 56789-0 
+				
+				\textbf{Empresa} Nome da sua empresa - CNPJ/CPF
+
+
+\end{document}

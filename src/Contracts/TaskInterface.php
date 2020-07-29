@@ -2,7 +2,7 @@
 
 namespace Operador\Contracts;
 
-interface ActionInterface
+interface TaskInterface
 {
     // public function prepare();
     // public function execute();

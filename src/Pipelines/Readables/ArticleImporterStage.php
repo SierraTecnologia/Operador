@@ -1,18 +1,19 @@
 <?php
 
-namespace Operador\Readables;
+namespace Operador\Pipelines\Readables;
 
 use League\Pipeline\Pipeline as PipelineBase;
-use League\Pipeline\StageInterface;
-use Operador\Conectors\Pipeline as PipelineComponent;
+use SiObjects\Entitys\Components\Pipeline as PipelineComponent;
 
-use Operador\Routines\Contracts\Registrator;
-use Operador\Routines\Contracts\Notificator;
-use Operador\Contracts\Stage as StageBase;
+use Finder\Routines\Contracts\Registrator;
+use Finder\Routines\Contracts\Notificator;
 
-class ArticleCreateStage implements StageInterface
+use Operador\Contracts\Stage;
+use Operador\Contracts\StageInterface;
+
+class ArticleImporterStage extends Stage implements StageInterface
 {
-    public function __invoke(/*PipelineComponent*/ $payload)
+    public function __invoke(/*PipelineComponent */$payload)
     {
         $payload->executeForEachComponent(
             function ($component) {

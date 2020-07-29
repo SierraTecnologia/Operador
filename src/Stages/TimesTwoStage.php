@@ -2,7 +2,7 @@
 
 namespace Operador\Operadors;
 
-use Support\Contracts\Runners\Stage as StageBase;
+use Operador\Contracts\Stage as StageBase;
 
 class TimesTwoStage extends StageBase
 {
