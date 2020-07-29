@@ -73,10 +73,13 @@ class TaskComponent extends ActionBase
     {
         $classAExecutar = '\\'.$this->classAExecutar;
         if (!$instance instanceof $this->classAfetada) {
-            Log::channel('sitec-finder')->notice('Não é instancia de '. $this->classAfetada.'!');
+            $this->notice('Não é instancia de '. $this->classAfetada.'!');
             return abort(500, 'Não é instancia de!');
         }
-        return new $classAExecutar($instance);
+        return $classAExecutar::makeWithOutput(
+            $this->output,
+            $instance
+        );
     }
 
     /**
@@ -241,9 +244,10 @@ class TaskComponent extends ActionBase
         return $newAction;
     }
 
-    public static function returnTask(): TaskComponent
+    public static function returnTask($output): TaskComponent
     {
-        return new self(
+        return TaskComponent::makeWithOutput(
+            $output,
             static::CODE,
             static::MODEL,
             static::class,

@@ -17,6 +17,7 @@ use Finder\Actions\Action;
 use Support\Contracts\Output\OutputableTrait;
 use Log;
 use Finder\Contracts\Action\RunnerInterface;
+use Operador\Contracts\ActionInterface;
 
 class Runner extends Base implements RunnerInterface
 {
@@ -45,7 +46,7 @@ class Runner extends Base implements RunnerInterface
         'stage'
     ];
 
-    public function usingAction(Action $action)
+    public function usingAction(ActionInterface $action)
     {
         $this->action = $action;
         return $this;
