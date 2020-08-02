@@ -16,7 +16,7 @@ use Support\Models\Base;
 use Finder\Actions\Action;
 use Support\Contracts\Output\OutputableTrait;
 use Log;
-use Finder\Contracts\Action\RunnerInterface;
+use Operador\Contracts\RunnerInterface;
 use Operador\Contracts\ActionInterface;
 
 class Runner extends Base implements RunnerInterface

@@ -1,12 +1,9 @@
 {
     "name": "sierratecnologia/operador",
-    "description": "Operador para ajudar no desenvolvimento da justiça privada",
+    "description": "Operador para ajudar no desenvolvimento de tasks",
     "type": "library",
     "keywords": [
-        "ancapistao",
-        "private",
-        "justice",
-        "private-justice",
+        "sitec",
         "operador"
     ],
     "license": "ANCAP",
@@ -19,13 +16,14 @@
     },
     "authors": [
         {
-            "name": "Private Justice",
+            "name": "Operador",
             "homepage": "https://sierratecnologia.com.br",
             "email": "contributing@sierratecnologia.com.br"
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "privatejustice/tramite": "dev-master"
     },
     "autoload": {
         "psr-4": {

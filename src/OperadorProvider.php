@@ -16,6 +16,42 @@ use Illuminate\Support\Facades\Route;
 class OperadorProvider extends ServiceProvider
 {
     /**
+     * Rotas do Menu
+     */
+    public static $menuItens = [
+        'Operações' => [
+            [
+                'text'        => 'Bots',
+                'icon'        => 'fas fa-fw fa-industry',
+                'icon_color'  => 'red',
+                'label_color' => 'success',
+                'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'nivel' => \App\Models\Role::$GOOD,
+            ],
+            'Bots' => [
+                [
+                    'text'        => 'Runners',
+                    'url'         => 'runners',
+                    'icon'        => 'fas fa-fw fa-industry',
+                    'icon_color'  => 'red',
+                    'label_color' => 'success',
+                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                    // 'nivel' => \App\Models\Role::$GOOD,
+                ],
+                [
+                    'text'        => 'Actions',
+                    'route'       => 'rica.finder.action.actions.index',
+                    'icon'        => 'fas fa-fw fa-coffee',
+                    'icon_color'  => 'red',
+                    'label_color' => 'success',
+                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                    // 'nivel' => \App\Models\Role::$GOOD,
+                ],
+            ],
+        ],
+    ];
+    
+    /**
      * Alias the services in the boot.
      */
     public function boot()

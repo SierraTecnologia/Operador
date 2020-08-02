@@ -1,6 +1,6 @@
 <?php
 
-namespace Operador\Http\Controllers\Features\Calendar;
+namespace Operador\Http\Controllers;
 
 use Operador\Http\Controllers\Controller;
 use Operador\Services\EventService;

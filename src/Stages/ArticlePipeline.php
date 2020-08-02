@@ -3,7 +3,7 @@
  * 
  */
 
-namespace Operador\Operadors;
+namespace Operador\Stages;
 
 use Operador\Contracts\PipelineBuilder as PipelineBuilderBase;
 use League\Pipeline\StageInterface;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Operador\Stats;
+namespace Operador\Processors;
 
 use Log;
 use App\Models\User;

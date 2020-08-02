@@ -1,6 +1,6 @@
 <?php
 
-namespace Operador\Operadors;
+namespace Operador\Stages;
 
 use Operador\Contracts\Stage as StageBase;
 
