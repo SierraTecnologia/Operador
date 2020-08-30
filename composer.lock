@@ -4,12 +4,82 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "381d19029c9dbd8ac637ed516215e6d2",
-    "packages": [],
+    "content-hash": "e36bfc6f71f727b24ee0de84c574c85c",
+    "packages": [
+        {
+            "name": "privatejustice/tramite",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../Tramite",
+                "reference": "523cde6e5d35a72c2c210183cf1162d803fc912f"
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tramite\\TramiteProvider"
+                    ],
+                    "dont-discover": [
+                        "scaffold-interface"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tramite\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "classmap": [
+                    "tests/TestCase.php"
+                ]
+            },
+            "scripts": {
+                "post-install-cmd": [],
+                "post-update-cmd": [],
+                "post-create-project-cmd": []
+            },
+            "license": [
+                "ANCAP"
+            ],
+            "authors": [
+                {
+                    "name": "Private Justice",
+                    "homepage": "https://privatejustice.com.br",
+                    "email": "contributing@privatejustice.com.br"
+                }
+            ],
+            "description": "Tramite para ajudar no desenvolvimento da justiça privada",
+            "homepage": "https://privatejustice.com/packages/tramite",
+            "keywords": [
+                "ancapistao",
+                "justice",
+                "private",
+                "private-justice",
+                "tramite"
+            ],
+            "support": {
+                "email": "help@privatejustice.com.br",
+                "issues": "https://github.com/privatejustice/tramite/issues",
+                "source": "https://github.com/privatejustice/tramite",
+                "docs": "https://github.com/privatejustice/tramite/blob/master/README.md"
+            },
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        }
+    ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "privatejustice/tramite": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
