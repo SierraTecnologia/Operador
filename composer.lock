@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e36bfc6f71f727b24ee0de84c574c85c",
+    "content-hash": "7aaacb892d862c8c84bd0cd1b1022791",
     "packages": [
         {
             "name": "privatejustice/tramite",
@@ -12,10 +12,10 @@
             "dist": {
                 "type": "path",
                 "url": "../Tramite",
-                "reference": "523cde6e5d35a72c2c210183cf1162d803fc912f"
+                "reference": "04a969626bc9e3ce52404375afd2dcb723147de3"
             },
             "require": {
-                "php": ">=7.0"
+                "php": "^7.4"
             },
             "type": "library",
             "extra": {
@@ -83,7 +83,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0"
+        "php": "^7.4"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
