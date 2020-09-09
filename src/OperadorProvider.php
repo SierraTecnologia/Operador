@@ -3,15 +3,15 @@
 namespace Operador;
 
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Str;
-use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Str;
 
 class OperadorProvider extends ServiceProvider
 {
@@ -19,12 +19,21 @@ class OperadorProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
+        [
+            'text' => 'Operações',
+            'icon' => 'fas fa-fw fa-search',
+            'icon_color' => "blue",
+            'label_color' => "success",
+            'section' => "master",
+            'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+        ],
         'Operações' => [
             [
                 'text'        => 'Bots',
                 'icon'        => 'fas fa-fw fa-industry',
                 'icon_color'  => 'red',
                 'label_color' => 'success',
+                'section' => "master",
                 'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                 // 'nivel' => \App\Models\Role::$GOOD,
             ],
@@ -35,6 +44,7 @@ class OperadorProvider extends ServiceProvider
                     'icon'        => 'fas fa-fw fa-industry',
                     'icon_color'  => 'red',
                     'label_color' => 'success',
+                    'section' => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'nivel' => \App\Models\Role::$GOOD,
                 ],
@@ -44,6 +54,7 @@ class OperadorProvider extends ServiceProvider
                     'icon'        => 'fas fa-fw fa-coffee',
                     'icon_color'  => 'red',
                     'label_color' => 'success',
+                    'section' => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'nivel' => \App\Models\Role::$GOOD,
                 ],
@@ -56,7 +67,6 @@ class OperadorProvider extends ServiceProvider
      */
     public function boot()
     {
-        
     }
 
     /**
@@ -75,8 +85,5 @@ class OperadorProvider extends ServiceProvider
         //     $viewsPath => base_path('resources/views/vendor/operador'),
         //     ], 'views'
         // );
-
-
     }
-
 }
