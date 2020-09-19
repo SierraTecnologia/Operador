@@ -14,7 +14,7 @@ class OperadorShipped
     /**
      * Create a new event instance.
      *
-     * @param  \App\Operador  $operador
+     * @param  \App\Operador $operador
      * @return void
      */
     public function __construct(Operador $operador)

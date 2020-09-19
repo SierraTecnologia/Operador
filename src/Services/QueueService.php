@@ -48,9 +48,11 @@ class QueueService
     public function retryAll()
     {
         try {
-            Artisan::call('queue:retry', [
+            Artisan::call(
+                'queue:retry', [
                 'id' => 'all',
-            ]);
+                ]
+            );
 
             return true;
         } catch (Exception $e) {
@@ -72,9 +74,11 @@ class QueueService
     public function retry($id)
     {
         try {
-            Artisan::call('queue:retry', [
+            Artisan::call(
+                'queue:retry', [
                 'id' => $id,
-            ]);
+                ]
+            );
 
             return true;
         } catch (Exception $e) {

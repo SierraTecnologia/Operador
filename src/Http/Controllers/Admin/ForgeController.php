@@ -45,7 +45,8 @@ class ForgeController extends Controller
 
     public function createJob(Request $request)
     {
-        $validatedData = $request->validate([
+        $validatedData = $request->validate(
+            [
             'command' => 'required',
             'user' => 'required',
             'minute' => 'required',
@@ -53,7 +54,8 @@ class ForgeController extends Controller
             'day' => 'required',
             'month' => 'required',
             'weekday' => 'required',
-        ]);
+            ]
+        );
 
         if ($this->service->createJob($validatedData)) {
             return back()->with('message', 'New Job Created');
@@ -65,9 +67,11 @@ class ForgeController extends Controller
     public function deleteJob(Request $request)
     {
         try {
-            $validatedData = $request->validate([
+            $validatedData = $request->validate(
+                [
                 'job_id' => 'required',
-            ]);
+                ]
+            );
 
             $this->service->deleteJob($validatedData['job_id']);
 
@@ -79,14 +83,16 @@ class ForgeController extends Controller
 
     public function createWorker(Request $request)
     {
-        $validatedData = $request->validate([
+        $validatedData = $request->validate(
+            [
             'connection' => 'required',
             'queue' => 'required',
             'timeout' => 'required',
             'sleep' => 'required',
             'tries' => 'required',
             'processes' => 'required',
-        ]);
+            ]
+        );
 
         if ($this->service->createWorker($validatedData)) {
             return back()->with('message', 'New Worker Created');
@@ -98,9 +104,11 @@ class ForgeController extends Controller
     public function deleteWorker(Request $request)
     {
         try {
-            $validatedData = $request->validate([
+            $validatedData = $request->validate(
+                [
                 'worker_id' => 'required',
-            ]);
+                ]
+            );
 
             $this->service->deleteWorker($validatedData['worker_id']);
 

@@ -69,7 +69,7 @@ class QueueController extends Controller
     /**
      * Retry the job
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return Response
      */
@@ -85,8 +85,8 @@ class QueueController extends Controller
     /**
      * Cancel the job
      *
-     * @param  int $id
-     * @param  string $table
+     * @param int    $id
+     * @param string $table
      *
      * @return Response
      */
