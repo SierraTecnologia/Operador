@@ -12,7 +12,7 @@
 
 namespace Operador\Models;
 
-use Support\Models\Base;
+use Pedreiro\Models\Base;
 use Finder\Actions\Action;
 use Support\Contracts\Output\OutputableTrait;
 use Log;
