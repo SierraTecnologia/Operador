@@ -2,9 +2,9 @@
 
 namespace Operador\Listeners;
 
-use Operador\Events\BusinessNewRegister;
 use Facilitador\Models\Notification;
-use Operador\Services\System\BusinessService;
+use Siravel\Events\BusinessNewRegister;
+use Siravel\Services\BusinessService;
 
 class TopicFiredForTargetListener
 {
