@@ -98,7 +98,7 @@
                                         {!! csrf_field() !!}
                                         {!! method_field('DELETE') !!}
                                         <input type="hidden" name="worker_id" value="{{ $worker->id }}">
-                                        <button class="btn btn-danger btn-sm pull-right" type="submit" onclick="return confirm('Are you sure you want to delete this worker?')"><i class="fa fa-trash"></i> Delete</button>
+                                        <button class="btn btn-danger btn-sm float-right" type="submit" onclick="return confirm('Are you sure you want to delete this worker?')"><i class="fa fa-trash"></i> Delete</button>
                                     </form>
                                 </td>
                             </tr>

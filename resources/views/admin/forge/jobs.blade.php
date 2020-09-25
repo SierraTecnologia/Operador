@@ -90,7 +90,7 @@
                                     {!! csrf_field() !!}
                                     {!! method_field('DELETE') !!}
                                     <input type="hidden" name="job_id" value="{{ $job->id }}">
-                                    <button class="btn btn-danger btn-sm pull-right" type="submit" onclick="return confirm('Are you sure you want to delete this job?')"><i class="fa fa-trash"></i> Delete</button>
+                                    <button class="btn btn-danger btn-sm float-right" type="submit" onclick="return confirm('Are you sure you want to delete this job?')"><i class="fa fa-trash"></i> Delete</button>
                                 </form>
                             </td>
                         </tr>

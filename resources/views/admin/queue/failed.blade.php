@@ -39,7 +39,7 @@
                             <td><i>{{ $job->reason }}</i></td>
                             <td class="text-right">{{ \Carbon\Carbon::parse($job->failed_at)->format('M d, Y') }}</td>
                             <td class="text-right">
-                                <div class="btn-toolbar justify-content-between pull-right">
+                                <div class="btn-toolbar justify-content-between float-right">
                                     <a class="btn btn-outline-primary btn-sm mr-2" href="{{ url('admin/queue/jobs/'.$job->id.'/retry') }}">
                                         <span class="fa fa-refresh"></span> Retry</a>
                                     <a class="btn btn-danger btn-sm" href="{{ url('admin/queue/jobs/'.$job->id.'/cancel/failed') }}" onclick="return confirm('Are you sure you want to cancel this job?')">

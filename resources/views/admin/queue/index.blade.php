@@ -39,7 +39,7 @@
                             <td class="text-right">{{ $job->attempts }}</td>
                             <td class="text-right">{{ \Carbon\Carbon::parse($job->created_at)->format('M d, Y') }}</td>
                             <td class="text-right">
-                                <div class="btn-toolbar justify-content-between pull-right">
+                                <div class="btn-toolbar justify-content-between float-right">
                                     <a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this job?')" href="{{ url('admin/queue/jobs/'.$job->id.'/cancel/active') }}">
                                         <span class="fa fa-trash"></span> Cancel
                                     </a>
