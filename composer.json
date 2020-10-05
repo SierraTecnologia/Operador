@@ -40,7 +40,6 @@
         "post-update-cmd": [],
         "post-create-project-cmd": []
     },
-    "repositories": [{"type": "path","url":"../**","options":{"symlink": true}}],
     "extra": {
         "laravel": {
             "providers": [
