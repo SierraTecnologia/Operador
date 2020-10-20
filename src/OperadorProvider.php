@@ -76,7 +76,7 @@ class OperadorProvider extends ServiceProvider
     {
         
         // Register Migrations
-        $this->loadMigrationsFrom(__DIR__.'/../database/operador');
+        $this->loadMigrationsFrom(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'database'.DIRECTORY_SEPARATOR.'operador');
 
         // // View namespace
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'operador');
