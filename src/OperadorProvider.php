@@ -82,7 +82,7 @@ class OperadorProvider extends ServiceProvider
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'operador');
         // $this->publishes(
         //     [
-        //     $viewsPath => base_path('resources/views/vendor/operador'),
+        //     $viewsPath => base_path('resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'operador'),
         //     ], 'views'
         // );
     }
