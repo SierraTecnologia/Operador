@@ -1,0 +1,76 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "edf5b59a9f80701c0eb3f6ce6c0f7396",
+    "packages": [
+        {
+            "name": "privatejustice/tramite",
+            "version": "0.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/privatejustice/tramite.git",
+                "reference": "1497b73fa2c32ae7a8c1d9301aac5390e9b1e737"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/privatejustice/tramite/zipball/1497b73fa2c32ae7a8c1d9301aac5390e9b1e737",
+                "reference": "1497b73fa2c32ae7a8c1d9301aac5390e9b1e737",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tramite\\TramiteProvider"
+                    ],
+                    "dont-discover": [
+                        "scaffold-interface"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tramite\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ANCAP"
+            ],
+            "authors": [
+                {
+                    "name": "Private Justice",
+                    "email": "contributing@privatejustice.com.br",
+                    "homepage": "https://privatejustice.com.br"
+                }
+            ],
+            "description": "Tramite para ajudar no desenvolvimento da justiça privada",
+            "homepage": "https://privatejustice.com/packages/tramite",
+            "keywords": [
+                "Ancapistão",
+                "Justice",
+                "private",
+                "private-justice",
+                "tramite"
+            ],
+            "time": "2020-09-19T01:21:55+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.4"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
+}

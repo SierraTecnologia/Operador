@@ -23,7 +23,7 @@
     ],
     "require": {
         "php": "^7.4",
-        "privatejustice/tramite": "dev-master"
+        "privatejustice/tramite": "^0.4.0"
     },
     "autoload": {
         "psr-4": {
