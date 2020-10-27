@@ -76,13 +76,13 @@ class OperadorProvider extends ServiceProvider
     {
         
         // Register Migrations
-        $this->loadMigrationsFrom(__DIR__.'/../database/operador');
+        $this->loadMigrationsFrom(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'database'.DIRECTORY_SEPARATOR.'operador');
 
         // // View namespace
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'operador');
         // $this->publishes(
         //     [
-        //     $viewsPath => base_path('resources/views/vendor/operador'),
+        //     $viewsPath => base_path('resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'operador'),
         //     ], 'views'
         // );
     }
