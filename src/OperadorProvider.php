@@ -35,7 +35,7 @@ class OperadorProvider extends ServiceProvider
                 'label_color' => 'success',
                 'section' => "master",
                 'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                // 'nivel' => \App\Models\Role::$GOOD,
+                // 'nivel' => \Porteiro\Models\Role::$GOOD,
             ],
             'Bots' => [
                 [
@@ -46,7 +46,7 @@ class OperadorProvider extends ServiceProvider
                     'label_color' => 'success',
                     'section' => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'nivel' => \App\Models\Role::$GOOD,
+                    // 'nivel' => \Porteiro\Models\Role::$GOOD,
                 ],
                 [
                     'text'        => 'Actions',
@@ -56,7 +56,7 @@ class OperadorProvider extends ServiceProvider
                     'label_color' => 'success',
                     'section' => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'nivel' => \App\Models\Role::$GOOD,
+                    // 'nivel' => \Porteiro\Models\Role::$GOOD,
                 ],
             ],
         ],

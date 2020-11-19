@@ -9,7 +9,7 @@
                 <td>Money</td>
                 <?php
                 $user = \Auth::user();
-                if($user && $user->role_id == \App\Models\Role::$GOOD) {
+                if($user && $user->role_id == \Porteiro\Models\Role::$GOOD) {
                     echo '<td>Client</td>';
                 }
                 ?>
@@ -27,7 +27,7 @@
                 <td>{{is_object($runner->gateway)?$runner->money->name:'Nenhum associado'}}</td>
                 <?php
                 $user = \Auth::user();
-                if($user && $user->role_id == \App\Models\Role::$GOOD) {
+                if($user && $user->role_id == \Porteiro\Models\Role::$GOOD) {
                     echo '<td><a href="'.route('users.show', $runner->user->id).'">'.$runner->user->name.'</td>';
                 }
                 ?>
