@@ -68,7 +68,7 @@ class ActionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return view('finder::action.actions.create');
     }
