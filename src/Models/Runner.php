@@ -14,7 +14,7 @@ namespace Operador\Models;
 
 use Pedreiro\Models\Base;
 use Finder\Actions\Action;
-use Support\Contracts\Output\OutputableTrait;
+use Muleta\Contracts\Output\OutputableTrait;
 use Log;
 use Operador\Contracts\RunnerInterface;
 use Operador\Contracts\ActionInterface;

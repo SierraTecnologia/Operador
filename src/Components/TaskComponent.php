@@ -13,7 +13,7 @@
 namespace Operador\Components;
 
 use Finder\Actions\Action;
-use Support\Contracts\Output\OutputableTrait;
+use Muleta\Contracts\Output\OutputableTrait;
 use Log;
 use Operador\Contracts\ActionInterface;
 use Operador\Contracts\Action as ActionBase;
