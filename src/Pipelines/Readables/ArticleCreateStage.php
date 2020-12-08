@@ -3,7 +3,7 @@
 namespace Operador\Pipelines\Readables;
 
 use League\Pipeline\Pipeline as PipelineBase;
-use SiObjects\Entitys\Components\Pipeline as PipelineComponent;
+use SiObjects\Entities\Components\Pipeline as PipelineComponent;
 
 use Finder\Routines\Contracts\Registrator;
 use Finder\Routines\Contracts\Notificator;
