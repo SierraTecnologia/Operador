@@ -43,7 +43,7 @@
                                     <a class="btn btn-outline-primary btn-sm mr-2" href="{{ url('admin/queue/jobs/'.$job->id.'/retry') }}">
                                         <span class="fa fa-refresh"></span> Retry</a>
                                     <a class="btn btn-danger btn-sm" href="{{ url('admin/queue/jobs/'.$job->id.'/cancel/failed') }}" onclick="return confirm('Are you sure you want to cancel this job?')">
-                                        <span class="fa fa-trash"></span> Cancel
+                                        <span class="fa fa-trash"></span> {{ __('pedreiro::generic.cancel') }}
                                     </a>
                                 </div>
                             </td>
