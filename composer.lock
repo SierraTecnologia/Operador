@@ -15,7 +15,7 @@
                 "reference": "e314e9d12b31ffe4729ef0aadfa2892c55e65463"
             },
             "require": {
-                "php": "^7.4"
+                "php": "^7.2|^8.0"
             },
             "type": "library",
             "extra": {
@@ -83,7 +83,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4"
+        "php": "^7.2|^8.0"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
