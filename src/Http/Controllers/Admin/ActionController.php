@@ -3,7 +3,7 @@
 namespace Finder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Finder\Actions\Action;
+use Operador\Actions\Action;
 use Operador\Models\Runner;
 
 class ActionController extends Controller

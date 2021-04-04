@@ -7,8 +7,8 @@ use Integrations\Connectors\Instagram\Instagram;
 use Integrations\Connectors\Instagram\Facebook;
 
 
-use Finder\Actions\PublishPost;
-use Finder\Actions\SearchFollows;
+use Operador\Actions\PublishPost;
+use Operador\Actions\SearchFollows;
 
 
 

@@ -12,7 +12,7 @@
 
 namespace Operador\Components;
 
-use Finder\Actions\Action;
+use Operador\Actions\Action;
 use Muleta\Contracts\Output\OutputableTrait;
 use Log;
 use Operador\Contracts\ActionInterface;
@@ -144,7 +144,7 @@ class TaskComponent extends ActionBase
         $actions[] = self::insertAction(
             'scanDomain',
             \Fabrica\Models\Infra\Domain::class, // Ou Url
-            \Finder\Components\Worker\Explorer\Spider::class,
+            \Operador\Components\Worker\Explorer\Spider::class,
             self::SPIDER
         );
 
@@ -154,7 +154,7 @@ class TaskComponent extends ActionBase
         $actions[] = self::insertAction(
             'whoisDomain',
             \Fabrica\Models\Infra\Domain::class, // Ou Url
-            \Finder\Components\Worker\Explorer\Whois::class,
+            \Operador\Components\Worker\Explorer\Whois::class,
             self::SPIDER
         );
 
@@ -179,7 +179,7 @@ class TaskComponent extends ActionBase
         $actions[] = self::insertAction(
             'searchLog',
             \Fabrica\Models\Infra\Computer::class,
-            \Finder\Components\Worker\Logging\Logging::class,
+            \Operador\Components\Worker\Logging\Logging::class,
             self::ROUTINE
         );
 
@@ -195,7 +195,7 @@ class TaskComponent extends ActionBase
         $actions[] = self::insertAction(
             'analyseComit',
             \Fabrica\Models\Code\Commit::class,
-            \Finder\Components\Worker\Analyser\Analyser::class,
+            \Operador\Components\Worker\Analyser\Analyser::class,
             self::HOOK
         );
 
@@ -205,7 +205,7 @@ class TaskComponent extends ActionBase
         $actions[] = self::insertAction(
             'deployCommit',
             \Fabrica\Models\Code\Commit::class,
-            \Finder\Components\Worker\Deploy\Deploy::class,
+            \Operador\Components\Worker\Deploy\Deploy::class,
             self::HOOK
         );
 
@@ -230,7 +230,7 @@ class TaskComponent extends ActionBase
         $actions[] = self::insertAction(
             'syncProject',
             \Fabrica\Models\Code\Project::class,
-            \Finder\Components\Worker\Sync\Project::class,
+            \Operador\Components\Worker\Sync\Project::class,
             self::ROUTINE
         );
 
