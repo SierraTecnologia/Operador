@@ -51,17 +51,6 @@ class OperadorProvider extends ServiceProvider
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'nivel' => \Porteiro\Models\Role::$GOOD,
                 ],
-                [
-                    'text'        => 'Actions',
-                    'route'       => 'rica.finder.action.actions.index',
-                    'icon'        => 'fas fa-fw fa-coffee',
-                    'icon_color'  => 'red',
-                    'label_color' => 'success',
-                    'section' => "master",
-                    'feature' => 'operador',
-                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'nivel' => \Porteiro\Models\Role::$GOOD,
-                ],
             ],
         ],
     ];
