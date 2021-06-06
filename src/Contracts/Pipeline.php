@@ -5,11 +5,11 @@ namespace Operador\Contracts;
 use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\ProcessorInterface;
 use League\Pipeline\FingersCrossedProcessor;
-use Support\Contracts\Support\Arrayable;
-use Support\Contracts\Support\ArrayableTrait;
+use Muleta\Contracts\Support\Arrayable;
+use Muleta\Contracts\Support\ArrayableTrait;
 use Muleta\Traits\Debugger\HasErrors;
 use Muleta\Traits\Coder\GetSetTrait;
-use Support\Contracts\Output\OutputableTrait;
+use Muleta\Contracts\Output\OutputableTrait;
 use Illuminate\Database\Eloquent\Collection;
 
 class Pipeline extends PipelineBase

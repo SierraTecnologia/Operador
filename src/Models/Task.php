@@ -13,7 +13,7 @@
 namespace Operador\Models;
 
 use Pedreiro\Models\Base;
-use Support\Contracts\Output\OutputableTrait;
+use Muleta\Contracts\Output\OutputableTrait;
 
 class Task extends Base
 {

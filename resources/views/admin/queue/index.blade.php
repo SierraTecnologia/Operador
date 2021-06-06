@@ -41,7 +41,7 @@
                             <td class="text-right">
                                 <div class="btn-toolbar justify-content-between float-right">
                                     <a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to cancel this job?')" href="{{ url('admin/queue/jobs/'.$job->id.'/cancel/active') }}">
-                                        <span class="fa fa-trash"></span> Cancel
+                                        <span class="fa fa-trash"></span> {{ __('pedreiro::generic.cancel') }}
                                     </a>
                                 </div>
                             </td>

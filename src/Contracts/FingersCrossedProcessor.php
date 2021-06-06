@@ -4,9 +4,9 @@ namespace Operador\Contracts;
 
 use League\Pipeline\FingersCrossedProcessor as FingersCrossedProcessorBase;
 
-use Support\Contracts\Support\ArrayableTrait;
+use Muleta\Contracts\Support\ArrayableTrait;
 use Muleta\Traits\Debugger\HasErrors;
-use Support\Contracts\Output\OutputableTrait;
+use Muleta\Contracts\Output\OutputableTrait;
 
 class FingersCrossedProcessor extends FingersCrossedProcessorBase
 {

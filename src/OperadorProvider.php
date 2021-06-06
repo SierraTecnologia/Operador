@@ -25,6 +25,7 @@ class OperadorProvider extends ServiceProvider
             'icon_color' => "blue",
             'label_color' => "success",
             'section' => "master",
+            'feature' => 'operador',
             'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
         ],
         'Operações' => [
@@ -34,27 +35,19 @@ class OperadorProvider extends ServiceProvider
                 'icon_color'  => 'red',
                 'label_color' => 'success',
                 'section' => "master",
+                'feature' => 'operador',
                 'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                 // 'nivel' => \Porteiro\Models\Role::$GOOD,
             ],
             'Bots' => [
                 [
                     'text'        => 'Runners',
-                    'url'         => 'runners',
+                    'route'         => 'runners',
                     'icon'        => 'fas fa-fw fa-industry',
                     'icon_color'  => 'red',
                     'label_color' => 'success',
                     'section' => "master",
-                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'nivel' => \Porteiro\Models\Role::$GOOD,
-                ],
-                [
-                    'text'        => 'Actions',
-                    'route'       => 'rica.finder.action.actions.index',
-                    'icon'        => 'fas fa-fw fa-coffee',
-                    'icon_color'  => 'red',
-                    'label_color' => 'success',
-                    'section' => "master",
+                    'feature' => 'operador',
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'nivel' => \Porteiro\Models\Role::$GOOD,
                 ],

@@ -22,7 +22,8 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.2|^8.0",
+        "lorisleiva/laravel-actions": "^1.1",
         "privatejustice/tramite": "^0.4.0"
     },
     "autoload": {
