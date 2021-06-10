@@ -3,12 +3,12 @@
  * 
  */
 
-namespace Finder\Routines\Readables;
+namespace Operador\Routines\Readables;
 
 use Log;
 use App\Logic\ComponentsPipeline as PipelineComponent;
-use Finder\Routines\ArticlePipeline;
-use Finder\Routines\Readables\RrsImporterStage;
+use Operador\Routines\ArticlePipeline;
+use Operador\Routines\Readables\RrsImporterStage;
 use Exception;
 
 class NewsRoutine
