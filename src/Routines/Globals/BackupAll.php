@@ -3,9 +3,9 @@
  * Estatisticas Rodadas Diariamente
  */
 
-namespace Finder\Routines\Globals;
+namespace Operador\Routines\Globals;
 
-use Finder\Routines\Database\BackupRoutine;
+use Operador\Routines\Database\BackupRoutine;
 
 use Operador\Actions\Action;
 use Operador\Actions\ActionCollection;

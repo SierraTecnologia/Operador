@@ -3,7 +3,7 @@
  * Estatisticas Rodadas Diariamente
  */
 
-namespace Finder\Routines\Explorer;
+namespace Operador\Routines\Explorer;
 
 use Operador\Actions\Action;
 use Operador\Actions\ActionCollection;

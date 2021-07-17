@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Routines;
+namespace Operador\Routines;
 
 use SiObjects\Components\Pipeline;
 use SiObjects\Components\Post as PostComponent;

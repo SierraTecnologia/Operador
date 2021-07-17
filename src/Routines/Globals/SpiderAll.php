@@ -3,9 +3,9 @@
  * Estatisticas Rodadas Diariamente
  */
 
-namespace Finder\Routines\Globals;
+namespace Operador\Routines\Globals;
 
-use Finder\Routines\Database\SpiderRoutine;
+use Operador\Routines\Database\SpiderRoutine;
 
 use Operador\Actions\Action;
 use Operador\Actions\ActionCollection;

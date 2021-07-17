@@ -5,8 +5,8 @@ namespace Operador\Pipelines\Readables;
 use League\Pipeline\Pipeline as PipelineBase;
 use SiObjects\Entities\Components\Pipeline as PipelineComponent;
 
-use Finder\Routines\Contracts\Registrator;
-use Finder\Routines\Contracts\Notificator;
+use Operador\Contracts\Registrator;
+use Operador\Contracts\Notificator;
 
 use Operador\Contracts\Stage;
 use Operador\Contracts\StageInterface;

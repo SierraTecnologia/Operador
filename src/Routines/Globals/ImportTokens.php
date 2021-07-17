@@ -3,9 +3,9 @@
  * Estatisticas Rodadas Diariamente
  */
 
-namespace Finder\Routines\Globals;
+namespace Operador\Routines\Globals;
 
-use Finder\Routines\Tokens\ImportRoutine;
+use Operador\Routines\Tokens\ImportRoutine;
 
 use Operador\Actions\Action;
 use Operador\Actions\ActionCollection;
