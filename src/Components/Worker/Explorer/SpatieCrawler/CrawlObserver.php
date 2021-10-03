@@ -12,8 +12,10 @@ abstract class CrawlObserver
      * Called when the crawler will crawl the url.
      *
      * @param \Psr\Http\Message\UriInterface $url
+     *
+     * @return void
      */
-    public function willCrawl(UriInterface $url)
+    public function willCrawl(UriInterface $url): void
     {
 
     }
@@ -46,8 +48,10 @@ abstract class CrawlObserver
 
     /**
      * Called when the crawl has ended.
+     *
+     * @return void
      */
-    public function finishedCrawling()
+    public function finishedCrawling(): void
     {
 
     }

@@ -16,7 +16,7 @@ use App\Models\User;
 class PostRoutine
 {
     
-    public function run()
+    public function run(): void
     {
         $result = (PostCreator::getPipelines())->process(new PostComponent());
         dd('PostRoutine', $result);

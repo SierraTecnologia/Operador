@@ -48,12 +48,12 @@ class ScanDomain extends ActionCollection
         return parent::execute();
     }
 
-    public function prepareTargets(Domain $database)
+    public function prepareTargets(Domain $database): void
     {
         $externalTargetZeroClass = $database;
     }
 
-    public function hasTargets()
+    public function hasTargets(): bool
     {
         if ($this->externalTargetZeroInstance === false) {
             return false;
@@ -61,7 +61,7 @@ class ScanDomain extends ActionCollection
         return true;
     }
     
-    public function prepareAction()
+    public function prepareAction(): void
     {
         $stage = 0;
         $action = Action::getActionByCode('scanDomain');

@@ -50,12 +50,12 @@ class BackupRoutine extends ActionCollection
         return parent::execute();
     }
 
-    public function prepareTargets(DatabaseCollection $database)
+    public function prepareTargets(DatabaseCollection $database): void
     {
         $externalTargetZeroClass = $database;
     }
 
-    public function hasTargets()
+    public function hasTargets(): bool
     {
         if ($this->externalTargetZeroInstance === false) {
             return false;
@@ -63,7 +63,7 @@ class BackupRoutine extends ActionCollection
         return true;
     }
     
-    public function prepareAction()
+    public function prepareAction(): void
     {
         $stage = 0;
         $action = Action::getActionByCode('backupCollection');

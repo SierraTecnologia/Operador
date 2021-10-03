@@ -10,7 +10,7 @@ use Spatie\Crawler\Crawler;
 
 abstract class SpatieCrawler
 {
-    public function getCrawler()
+    public function getCrawler(): Crawler
     {
         return Crawler::create()->ignoreRobots()->setConcurrency(1)
         // Stop in 5 urls
@@ -18,7 +18,7 @@ abstract class SpatieCrawler
         // Maxim REsponse e Delay 
             ->setMaximumResponseSize(1024 * 1024 * 3)->setDelayBetweenRequests(150);
     }
-    public function execute($url)
+    public function execute($url): void
     {
 
         $this->crawler = $this->getCrawler()
@@ -26,7 +26,7 @@ abstract class SpatieCrawler
             ->startCrawling($url);
     }
 
-    public function executeMultipleObservers()
+    public function executeMultipleObservers(): void
     {
         $this->crawler = $this->getCrawler()
             ->setCrawlObservers(
@@ -47,12 +47,15 @@ abstract class SpatieCrawler
             // ->startCrawling($url);
     }
 
-    public function executeJavascript()
+    public function executeJavascript(): void
     {
         $this->crawler->executeJavaScript();
     }
 
-    protected function getAllLinks($html)
+    /**
+     * @return \Illuminate\Support\Collection
+     */
+    protected function getAllLinks(string $html): self
     {
         $domCrawler = new DomCrawler($html);
     
@@ -84,8 +87,10 @@ abstract class SpatieCrawler
      * Crawl all links in the given html.
      *
      * @param string $html
+     *
+     * @return void
      */
-    protected function crawlAllLinks($html)
+    protected function crawlAllLinks($html): void
     {
         $allLinks = $this->getAllLinks($html);
 

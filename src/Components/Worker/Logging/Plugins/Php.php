@@ -30,7 +30,12 @@ class Php
             $this->files['error'][] = basename($path);
         }
     }
-    function loadSoftware()
+    /**
+     * @return (bool|mixed|string)[]
+     *
+     * @psalm-return array{name: mixed, desc: mixed, home: mixed, notes: string, load: bool}
+     */
+    function loadSoftware(): array
     {
         $path = ( SAFE_MODE === true ) ? '' : ini_get('error_log');
         if ($path !== '' ) {
@@ -55,7 +60,7 @@ class Php
     }
     
     
-    function getConfig( $type , $file , $software , $counter )
+    function getConfig( $type , $file , $software , $counter ): string
     {
     
         $file_json_encoded = json_encode($file);

@@ -24,7 +24,7 @@ class Whois
         $this->domain = $domain;
     }
 
-    public function execute()
+    public function execute(): void
     {
         
     }

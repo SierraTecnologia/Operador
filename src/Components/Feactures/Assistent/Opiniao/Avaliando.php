@@ -5,21 +5,36 @@ namespace Operador\Components\Feactures\Assistent\Opiniao;
 class Avaliando
 {
 
-    public function agents()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: Person::class}
+     */
+    public function agents(): array
     {
         return [
             Person::class,
         ];
     }
 
-    public function targets()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: Video::class}
+     */
+    public function targets(): array
     {
         return [
             Video::class,
         ];
     }
 
-    public function completeFields()
+    /**
+     * @return array
+     *
+     * @psalm-return array<empty, empty>
+     */
+    public function completeFields(): array
     {
         // Proprio Albo
         return [
@@ -27,7 +42,7 @@ class Avaliando
         ];
     }
 
-    public function moreProfile()
+    public function moreProfile(): void
     {
         // Gostos
 
@@ -35,7 +50,7 @@ class Avaliando
     }
 
 
-    public function moreInfo()
+    public function moreInfo(): void
     {
         // Relacionamentos
 

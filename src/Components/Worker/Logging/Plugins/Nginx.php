@@ -44,7 +44,12 @@ class Nginx
         ),
     );
 
-    function loadSoftware()
+    /**
+     * @return (bool|mixed)[]
+     *
+     * @psalm-return array{name: mixed, desc: mixed, home: mixed, notes: mixed, load: bool}
+     */
+    function loadSoftware(): array
     {
         return array(
             'name'    => __('NGINX'),
@@ -56,6 +61,9 @@ class Nginx
     }
 
 
+    /**
+     * @return null|string
+     */
     function getConfig( $type , $file , $software , $counter )
     {
 

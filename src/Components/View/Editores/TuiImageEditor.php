@@ -10,15 +10,17 @@ use Log;
 class TuiImageEditor
 {
     
-    public function getDependences()
+    public function getDependences(): void
     {
         $this->getCdn();
     }
     
     /**
-     * 
+     * @return string[]
+     *
+     * @psalm-return array{0: '<link rel="stylesheet" href="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.css">', 1: '<script src="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.js"></script>'}
      */
-    public function getCdn()
+    public function getCdn(): array
     {
         return [
             '<link rel="stylesheet" href="https://uicdn.toast.com/tui-image-editor/latest/tui-image-editor.css">',
@@ -26,7 +28,7 @@ class TuiImageEditor
         ];
     }
     
-    public function executeJs()
+    public function executeJs(): string
     {
         return "var ImageEditor = require('tui-image-editor');
         var blackTheme = require('./js/theme/black-theme.js');
@@ -55,7 +57,7 @@ class TuiImageEditor
         });";
     }
 
-    public function executeJs2()
+    public function executeJs2(): string
     {
         return "var ImageEditor = require('tui-image-editor');
         var instance = new ImageEditor(document.querySelector('#tui-image-editor'), {

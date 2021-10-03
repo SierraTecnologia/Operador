@@ -5,12 +5,22 @@ namespace Operador\Components\Feactures\Feedback;
 class Falar
 {
 
-    public function getModel()
+    /**
+     * @return string
+     *
+     * @psalm-return Fisico::class
+     */
+    public function getModel(): string
     {
         return Fisico::class;
     }
 
-    public function create()
+    /**
+     * @return array
+     *
+     * @psalm-return array<empty, empty>
+     */
+    public function create(): array
     {
         return [
             

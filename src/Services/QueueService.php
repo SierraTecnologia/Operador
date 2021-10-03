@@ -32,7 +32,7 @@ class QueueService
         return FailedJob::paginate($this->pagination_count);
     }
 
-    public function restart()
+    public function restart(): bool
     {
         try {
             Artisan::call('queue:restart');
@@ -45,7 +45,7 @@ class QueueService
         }
     }
 
-    public function retryAll()
+    public function retryAll(): bool
     {
         try {
             Artisan::call(
@@ -71,7 +71,7 @@ class QueueService
         return Job::find($id)->delete();
     }
 
-    public function retry($id)
+    public function retry($id): bool
     {
         try {
             Artisan::call(

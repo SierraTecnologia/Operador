@@ -5,7 +5,12 @@ namespace Operador\Components\Feactures\Training\Curriculo;
 
 class Logica
 {
-    public function conceitos()
+    /**
+     * @return string[][]
+     *
+     * @psalm-return array{0: array{0: 'Isolamento as partes ignorando camadas externas'}, 1: array{0: 'Isolamento'}}
+     */
+    public function conceitos(): array
     {
         return [
             [

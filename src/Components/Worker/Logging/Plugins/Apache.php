@@ -58,7 +58,7 @@ class Apache
         );
 
 
-        public function getPaths()
+        public function getPaths(): void
         {
             /**
              * Add sub-directories within specified paths
@@ -100,7 +100,12 @@ class Apache
 
 
 
-        function loadSoftware()
+        /**
+         * @return (bool|mixed)[]
+         *
+         * @psalm-return array{name: mixed, desc: mixed, home: mixed, notes: mixed, load: bool}
+         */
+        function loadSoftware(): array
         {
             return array(
             'name'    => __('Apache'),
@@ -118,6 +123,9 @@ class Apache
         */
 
 
+        /**
+         * @return null|string
+         */
         function getConfig( $type , $file , $software , $counter )
         {
 

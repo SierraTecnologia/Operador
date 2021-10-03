@@ -24,7 +24,7 @@ use Operador\Components\Relation;
 
 class RegistratorLog
 {
-    public function register(Registrator $something)
+    public function register(Registrator $something): Registrator
     {
         echo 'registration log ' . $something . '<br>';
         return $something;

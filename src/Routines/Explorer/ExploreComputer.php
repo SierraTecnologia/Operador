@@ -56,12 +56,12 @@ class ExploreComputer extends ActionCollection
         return parent::execute();
     }
 
-    public function prepareTargets(Computer $database)
+    public function prepareTargets(Computer $database): void
     {
         $externalTargetZeroClass = $database;
     }
 
-    public function hasTargets()
+    public function hasTargets(): bool
     {
         if ($this->externalTargetZeroInstance === false) {
             return false;
@@ -69,7 +69,7 @@ class ExploreComputer extends ActionCollection
         return true;
     }
     
-    public function prepareAction()
+    public function prepareAction(): void
     {
         $stage = 0;
         $action = Action::getActionByCode('');

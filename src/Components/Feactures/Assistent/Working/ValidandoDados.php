@@ -5,14 +5,24 @@ namespace Operador\Components\Feactures\Assistent\Working;
 class ValidandoDados
 {
 
-    public function alvos()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: Person::class}
+     */
+    public function alvos(): array
     {
         return [
             Person::class,
         ];
     }
 
-    public function completeFields()
+    /**
+     * @return array
+     *
+     * @psalm-return array<empty, empty>
+     */
+    public function completeFields(): array
     {
         // Proprio Albo
         return [
@@ -20,7 +30,7 @@ class ValidandoDados
         ];
     }
 
-    public function moreProfile()
+    public function moreProfile(): void
     {
         // Gostos
 
@@ -28,7 +38,7 @@ class ValidandoDados
     }
 
 
-    public function moreInfo()
+    public function moreInfo(): void
     {
         // Relacionamentos
 

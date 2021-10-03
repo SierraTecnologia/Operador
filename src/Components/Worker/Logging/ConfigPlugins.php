@@ -19,7 +19,12 @@ use Operador\Components\Worker\Logging\Plugins\Php;
 class ConfigPlugins
 {
 
-    public function getSoftwares()
+    /**
+     * @return array[]
+     *
+     * @psalm-return array<string, array>
+     */
+    public function getSoftwares(): array
     {
         $softwaresList = array( 'Apache' , 'Iis' , 'Nginx' , 'Php' );
         $softwaresAll  = array();

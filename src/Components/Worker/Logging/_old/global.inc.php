@@ -253,7 +253,7 @@ $locale_numeraljs = array(
 |--------------------------------------------------------------------------
 |
 */
-function my_autoloader( $ClassName )
+function my_autoloader( $ClassName ): void
 {
     @include dirname(__FILE__) . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $ClassName . ".php";
 }
@@ -287,9 +287,9 @@ function h( $text )
  *
  * @param string $text the text key
  *
- * @return string     the translation
+ * @return void
  */
-function _h( $text )
+function _h( $text ): void
 {
     _e(htmlentities($text, ENT_QUOTES, 'UTF-8'));
 }
@@ -328,9 +328,9 @@ function _e( $text )
 /**
  * Load all unset constants
  *
- * @return
+ * @return void
  */
-function load_default_constants()
+function load_default_constants(): void
 {
     $defaults = array(
     'AUTH_LOG_FILE_COUNT' ,
@@ -382,7 +382,7 @@ function load_default_constants()
  * Configuration file can be a PHP file since 1.5.0 or a json file below
  * Both files contains a JSON configuration array but the PHP version is not callable by a guest on web
  *
- * @return string  the path in a string or null if not found
+ * @return false|null|string the path in a string or null if not found
  */
 function get_config_file_path()
 {
@@ -405,9 +405,9 @@ function get_config_file_path()
  *
  * @param string $path the configuration file path or false if the function has to compute itself
  *
- * @return string         the file name or null if configuration not found
+ * @return null|string the file name or null if configuration not found
  */
-function get_config_file_name( $path = false )
+function get_config_file_name( $path = false ): ?string
 {
     if ($path === false ) {
         $path = get_config_file_path();
@@ -631,25 +631,25 @@ function config_load( $load_user_configuration_dir = true )
 
     // Finally sort files
     if (! function_exists('display_asc') ) {
-        function display_asc( $a , $b )
+        function display_asc( $a , $b ): int
         {
             return strcmp($a[ "display" ], $b[ "display" ]); 
         }
     }
     if (! function_exists('display_desc') ) {
-        function display_desc( $a , $b )
+        function display_desc( $a , $b ): int
         {
             return strcmp($b[ "display" ], $a[ "display" ]); 
         }
     }
     if (! function_exists('display_insensitive_asc') ) {
-        function display_insensitive_asc( $a , $b )
+        function display_insensitive_asc( $a , $b ): int
         {
             return strcmp($a[ "display" ], $b[ "display" ]); 
         }
     }
     if (! function_exists('display_insensitive_desc') ) {
-        function display_insensitive_desc( $a , $b )
+        function display_insensitive_desc( $a , $b ): int
         {
             return strcmp($b[ "display" ], $a[ "display" ]); 
         }
@@ -1116,9 +1116,9 @@ function get_client_ip()
  *
  * @param boolean $q include the query string
  *
- * @return string  current url
+ * @return null|string current url
  */
-function get_current_url( $q = false )
+function get_current_url( $q = false ): ?string
 {
     if (isset($_SERVER[ 'SERVER_PROTOCOL' ]) ) { // only web, not unittests
         $s        = &$_SERVER;
@@ -1149,7 +1149,7 @@ function get_current_url( $q = false )
  *
  * @param string $ip an ipv4 address
  *
- * @return boolean       true if address is local
+ * @return false|string true if address is local
  */
 function is_not_local_ip( $ip )
 {

@@ -59,9 +59,10 @@ class Crawler
      * Function to parse page for title tags
      *
      * @params string $data HTML of page
-     * @return string|bool title of page of null if not found
+     *
+     * @return null|string title of page of null if not found
      */
-    public function getTitleFromHtml($data)
+    public function getTitleFromHtml($data): ?string
     {
         if (preg_match('#<title>(.*)</title>#is', $data, $title)) { return trim($title[1]);
         } else { return null;
