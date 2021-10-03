@@ -44,6 +44,9 @@ if (isset($_POST['s']) ) {
         |--------------------------------------------------------------------------
         |
         */
+        /**
+         * @return never
+         */
         function pml_error_handler($errno, $errstr, $errfile, $errline, array $errcontext)
         {
             throw new ErrorException($errstr, 0, $errno, $errfile, $errline); 

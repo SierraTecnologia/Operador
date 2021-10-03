@@ -20,7 +20,7 @@ class DeployBusinessAmbiente
         
     }
 
-    public function getStage()
+    public function getStage(): void
     {
         host('domain.com')
             ->stage('production')
@@ -28,7 +28,7 @@ class DeployBusinessAmbiente
             ->set('deploy_path', '/var/www/domain.com');
     }
 
-    public function getHost()
+    public function getHost(): void
     {
         task(
             'test', function () {
@@ -37,12 +37,12 @@ class DeployBusinessAmbiente
         );
     }
 
-    public function getTask()
+    public function getTask(): void
     {
 
     }
 
-    public function getAllTasks()
+    public function getAllTasks(): void
     {
 
         task(

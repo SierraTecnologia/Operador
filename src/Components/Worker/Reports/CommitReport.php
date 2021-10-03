@@ -18,7 +18,12 @@ class CommitReport
         
     }
     
-    public function filters()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{by_author: ''}
+     */
+    public function filters(): array
     {
         return [
             'by_author' => '',
@@ -27,10 +32,12 @@ class CommitReport
 
     /**
      * O func_params padrão é null. null nao faz nada. É o total, inclui todos os filtros
-     * 
+     *
      * Cada o func_params seja preenchido, então ele se diferenciará dos outros registros
+     *
+     * @return void
      */
-    public function criarRelatorio()
+    public function criarRelatorio(): void
     {
         Commit::all();
 

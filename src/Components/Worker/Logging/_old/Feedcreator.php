@@ -157,8 +157,10 @@ class FeedHtmlField
      * Creates a new instance of FeedHtmlField.
      *
      * @param $string: if given, sets the rawFieldContent property
+     *
+     * @return void
      */
-    function FeedHtmlField($parFieldContent)
+    function FeedHtmlField($parFieldContent): void
     {
         if ($parFieldContent) {
             $this->rawFieldContent = $parFieldContent;
@@ -208,7 +210,7 @@ class UniversalFeedCreator extends FeedCreator
 
     var $_feed;
 
-    function _setMIME($format)
+    function _setMIME($format): void
     {
         switch (strtoupper($format)) {
 
@@ -234,7 +236,7 @@ class UniversalFeedCreator extends FeedCreator
         }
     }
 
-    function _setFormat($format)
+    function _setFormat($format): void
     {
         switch (strtoupper($format)) {
 
@@ -291,6 +293,8 @@ class UniversalFeedCreator extends FeedCreator
      *
      * @param format    string    format the feed should comply to. Valid values are:
      *                             "PIE0.1" (deprecated), "mbox", "RSS0.91", "RSS1.0", "RSS2.0", "OPML", "ATOM0.3".
+     *
+     * @return void
      */
     function outputFeed( $timezone , $format='RSS2.0' )
     {
@@ -368,10 +372,13 @@ class FeedCreator extends HtmlDescribable
     /**
      * Adds an FeedItem to the feed.
      *
-     * @param  object FeedItem $item The FeedItem to add to the feed.
+     * @param object FeedItem $item The FeedItem to add to the feed.
+     *
      * @access public
+     *
+     * @return void
      */
-    function addItem($item)
+    function addItem($item): void
     {
         $this->items[] = $item;
     }
@@ -389,7 +396,7 @@ class FeedCreator extends HtmlDescribable
      * @param  int        length the maximum length the string should be truncated to
      * @return string    the truncated string
      */
-    function iTrunc($string, $length)
+    function iTrunc(string $string, int $length)
     {
         if (strlen($string)<=$length) {
             return $string;
@@ -422,8 +429,10 @@ class FeedCreator extends HtmlDescribable
      * Creates a comment indicating the generator of this feed.
      * The format of this comment seems to be recognized by
      * Syndic8.com.
+     *
+     * @return string
      */
-    function _createGeneratorComment()
+    function _createGeneratorComment(): string
     {
         return "<!-- generator=\"".FEEDCREATOR_VERSION."\" -->\n";
     }
@@ -433,11 +442,13 @@ class FeedCreator extends HtmlDescribable
      * Creates a string containing all additional elements specified in
      * $additionalElements.
      *
-     * @param  elements    array    an associative array containing key => value pairs
-     * @param  indentString    string    a string that will be inserted before every generated line
+     * @param elements    array    an associative array containing key => value pairs
+     * @param indentString    string    a string that will be inserted before every generated line
+     * @param string $indentString
+     *
      * @return string    the XML tags corresponding to $additionalElements
      */
-    function _createAdditionalElements($elements, $indentString="")
+    function _createAdditionalElements($elements, string $indentString="")
     {
         $ae = "";
         if (is_array($elements)) {
@@ -448,7 +459,7 @@ class FeedCreator extends HtmlDescribable
         return $ae;
     }
 
-    function _createStylesheetReferences()
+    function _createStylesheetReferences(): string
     {
         $xml = "";
         if (isset($this->cssStyleSheet) ) { $xml .= "<?xml-stylesheet href=\"".$this->cssStyleSheet."\" type=\"text/css\"?>\n";
@@ -463,7 +474,8 @@ class FeedCreator extends HtmlDescribable
      * Builds the feed's text.
      *
      * @abstract
-     * @return   string    the feed's complete text
+     *
+     * @return void
      */
     function createFeed( $timezone )
     {
@@ -493,8 +505,11 @@ class FeedCreator extends HtmlDescribable
 
 
     /**
-     * @since  1.4
+     * @since 1.4
+     *
      * @access private
+     *
+     * @return never
      */
     function _redirect($filename)
     {
@@ -521,8 +536,10 @@ class FeedCreator extends HtmlDescribable
      * Outputs this feed directly to the browser - for on-the-fly feed generation
      *
      * @since 1.7.2-mod
-     *
+
      * still missing: proper header output - currently you have to add it manually
+     *
+     * @return void
      */
     function outputFeed( $timezone , $format='RSS2.0' )
     {
@@ -545,6 +562,8 @@ class FeedDate
      * Accepts RFC 822, ISO 8601 date formats as well as unix time stamps.
      *
      * @param mixed $dateString optional the date this FeedDate will represent. If not specified, the current date and time is used.
+     *
+     * @return void
      */
     function FeedDate($dateString="")
     {
@@ -602,7 +621,7 @@ class FeedDate
     /**
      * Gets the date stored in this FeedDate as an RFC 822 date.
      *
-     * @return a date in RFC 822 format
+     * @return false|string date in RFC 822 format
      */
     function rfc822()
     {
@@ -614,7 +633,7 @@ class FeedDate
     /**
      * Gets the date stored in this FeedDate as an ISO 8601 date.
      *
-     * @return a date in ISO 8601 (RFC 3339) format
+     * @return false|string date in ISO 8601 (RFC 3339) format
      */
     function iso8601()
     {
@@ -655,7 +674,7 @@ class RSSCreator091 extends FeedCreator
      */
     var $RSSVersion;
 
-    function RSSCreator091()
+    function RSSCreator091(): void
     {
         $this->_setRSSVersion("0.91");
         $this->contentType = "application/rss+xml";
@@ -665,8 +684,12 @@ class RSSCreator091 extends FeedCreator
      * Sets this RSS feed's version number.
      *
      * @access private
+     *
+     * @param string $version
+     *
+     * @return void
      */
-    function _setRSSVersion($version)
+    function _setRSSVersion(string $version): void
     {
         $this->RSSVersion = $version;
     }
@@ -808,7 +831,7 @@ class RSSCreator091 extends FeedCreator
 class RSSCreator20 extends RSSCreator091
 {
 
-    function RSSCreator20()
+    function RSSCreator20(): void
     {
         parent::_setRSSVersion("2.0");
     }
@@ -835,13 +858,13 @@ class RSSCreator20 extends RSSCreator091
 class AtomCreator10 extends FeedCreator
 {
 
-    function AtomCreator10()
+    function AtomCreator10(): void
     {
         $this->contentType = "application/atom+xml";
         $this->encoding = "utf-8";
     }
 
-    function createFeed( $timezone )
+    function createFeed( $timezone ): string
     {
         $feed = "<?xml version=\"1.0\" encoding=\"".$this->encoding."\"?>\n";
         $feed.= $this->_createGeneratorComment();

@@ -16,8 +16,10 @@ class NewsRoutine
 
     /**
      * Se byClass nao for false, retorna todas as ações para qualquer tipo de instancia
+     *
+     * @return true
      */
-    public function run()
+    public function run(): bool
     {
 
         $payload = PipelineComponent(Rrs::all());

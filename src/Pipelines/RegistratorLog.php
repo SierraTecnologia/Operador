@@ -25,7 +25,7 @@ use Operador\Contracts\Registrator;
 
 class RegistratorLog
 {
-    public function register(Registrator $something)
+    public function register(Registrator $something): Registrator
     {
         echo 'registration log ' . $something . '<br>';
         return $something;

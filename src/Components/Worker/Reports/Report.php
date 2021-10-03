@@ -21,10 +21,14 @@ class Report
 
     /**
      * O func_params padrão é null. null nao faz nada. É o total, inclui todos os filtros
-     * 
+     *
      * Cada o func_params seja preenchido, então ele se diferenciará dos outros registros
+     *
+     * @return string[]
+     *
+     * @psalm-return array{filliable_id: '', filliable_type: '', periodo: '', result: '', func: '', func_params: ''}
      */
-    public function colunas()
+    public function colunas(): array
     {
         return [
             'filliable_id' => '', // Identificador Opcional

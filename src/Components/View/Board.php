@@ -25,7 +25,7 @@ use SiObjects\Components\Relation;
 class Board
 {
     
-    public function executeRoutines()
+    public function executeRoutines(): void
     {
         new ForceNewRelations($this);
         new GetNewData($this);
@@ -34,8 +34,12 @@ class Board
     
     /**
      * CLasses Modulos
+     *
+     * @return (Facebook|Instagram)[]
+     *
+     * @psalm-return array{0: Instagram, 1: Facebook}
      */
-    public function getIntegrations()
+    public function getIntegrations(): array
     {
         return [
             new Instagram(),
@@ -43,7 +47,12 @@ class Board
         ];
     }
     
-    public function getActions()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: SearchFollows::class, 1: PublishPost::class}
+     */
+    public function getActions(): array
     {
         return [
             SearchFollows::class,
@@ -51,7 +60,12 @@ class Board
         ];
     }
 
-    public function getComponents()
+    /**
+     * @return ((string|string[])[]|string)[]
+     *
+     * @psalm-return array{0: Profile::class, 1: array{0: Relation::class, 1: Post::class, 2: array{0: Comment::class}}}
+     */
+    public function getComponents(): array
     {
         return [
             Profile::class,
@@ -66,10 +80,11 @@ class Board
     }
 
     /**
-     * 
+     * @return string[]
+     *
+     * @psalm-return array{0: SearchFollows::class, 1: PublishPost::class}
      */
-    
-    public function getComponentsForFather()
+    public function getComponentsForFather(): array
     {
         return [
             SearchFollows::class,
@@ -80,8 +95,10 @@ class Board
     
     /**
      * CLasses Operações
+     *
+     * @return true
      */
-    public function executeForEachIntegration($functionToExecute)
+    public function executeForEachIntegration($functionToExecute): bool
     {
         $integrations = $this->getIntegrations();
         foreach ( $integrations as $integration ) {
@@ -90,7 +107,10 @@ class Board
         return true;
     }
 
-    public function executeForEachComponent($functionToExecute, $parent = false)
+    /**
+     * @return true
+     */
+    public function executeForEachComponent($functionToExecute, $parent = false): bool
     {
         $self = $this;
         $components = $this->getComponentsForFather($parent);

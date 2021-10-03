@@ -11,7 +11,7 @@ class GithubSpider
 
     }
 
-    public static function login()
+    public static function login(): void
     {
         // Get the QueryList instance
         $ql = QueryList::getInstance();

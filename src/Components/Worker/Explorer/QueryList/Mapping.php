@@ -13,7 +13,7 @@ class Mapping
         $this->url = $url;
     }
 
-    public function execute($follow = true)
+    public function execute($follow = true): void
     {
         $ql = QueryList::get($this->url);
 

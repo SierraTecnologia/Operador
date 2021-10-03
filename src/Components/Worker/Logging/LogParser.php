@@ -19,14 +19,16 @@ class LogParser
      * @param boolean $load_more           loadmore mode : if true, we do not try to guess the previous line
      * @param string  $old_lastline        The fingerprint of the last known line (previous call)
      * @param boolean $multiline           Whether the parser should understand non understandable lines as multi lines of
-     *                                     a field     
+     *                                     a field
      * @param string  $search              A search expression
      * @param integer $data_to_parse       The maximum count of bytes to read a new line (basically the difference between
-     *                                     the previous scanned file size and the current one)     
+     *                                     the previous scanned file size and the current one)
      * @param boolean $full                Whether the log file should be loaded from scratch
      * @param [type]  $max_search_log_time The maximum duration in s to parse lines
      *
-     * @return [type]                        [description]
+     * @return (array[]|bool|int|mixed|string)[]|string [description]
+     *
+     * @psalm-return '1'|array{notice?: 1, logs?: non-empty-list<array>, found: bool, abort: bool, regsearch: bool, search: string, full: bool, lpo: false|int, count: 0|positive-int, bytes: 0|positive-int, skiplines: 0|positive-int, errorlines: 0|positive-int, fingerprint: string, lastline: string, duration: int, filesize: false|int, filemodif: mixed, filemodifu: mixed}
      */
     public static function getNewLines( $regex , $match , $types , $tz , $wanted_lines , $exclude , $file_path , $start_offset , $start_from , $load_more , $old_lastline , $multiline , $search , $data_to_parse , $full , $max_search_log_time )
     {
@@ -301,7 +303,9 @@ class LogParser
      * @param string  $file  the file path
      * @param integer $count the count of wanted lines
      *
-     * @return array            an array of read lines or false of fiel error
+     * @return false|string[] an array of read lines or false of fiel error
+     *
+     * @psalm-return false|list<string>
      */
     public static function getLinesFromBottom( $file , $count = 1 )
     {

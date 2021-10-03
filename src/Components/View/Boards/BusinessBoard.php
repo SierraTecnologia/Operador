@@ -10,12 +10,17 @@ use Log;
 class BusinessBoard extends Board
 {
 
-    protected function dashboard()
+    protected function dashboard(): void
     {
 
     }
 
-    protected function getInteresses()
+    /**
+     * @return array
+     *
+     * @psalm-return array<empty, empty>
+     */
+    protected function getInteresses(): array
     {
         return [
 
@@ -23,7 +28,9 @@ class BusinessBoard extends Board
     }
 
     /**
-     * 
+     * @return string[]
+     *
+     * @psalm-return array{0: InfraBoard::class}
      */
     public function getBoards()
     {
@@ -32,7 +39,12 @@ class BusinessBoard extends Board
         ];
     }
     
-    public function getActions()
+    /**
+     * @return (GetNewData|SendNewData|mixed)[]
+     *
+     * @psalm-return array{Editor: mixed, Save: GetNewData, Delete: SendNewData, Send: mixed}
+     */
+    public function getActions(): array
     {
         return [
             'Editor' => $this->getEditores(),
@@ -42,7 +54,12 @@ class BusinessBoard extends Board
         ];
     }
 
-    public function getComponents()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: Post::class}
+     */
+    public function getComponents(): array
     {
         return [
             Post::class
@@ -50,10 +67,11 @@ class BusinessBoard extends Board
     }
 
     /**
-     * 
+     * @return string[]
+     *
+     * @psalm-return array{0: TuiImageEditor::class}
      */
-    
-    public function getEditores()
+    public function getEditores(): array
     {
         return [
             TuiImageEditor::class,

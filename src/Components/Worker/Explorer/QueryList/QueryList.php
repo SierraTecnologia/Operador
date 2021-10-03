@@ -11,7 +11,7 @@ class QueryList
 
     }
 
-    public function hahha()
+    public function hahha(): void
     {
         $ql = QueryList::get('https://www.google.co.jp/search?q=QueryList');
 

@@ -35,20 +35,25 @@ class Spider
         $this->crawler = $this->getCrawler();
     }
 
-    public function execute()
+    /**
+     * @return true
+     */
+    public function execute(): bool
     {
         return $this->explore($this->url);
     }
 
-    protected function getCrawler()
+    protected function getCrawler(): Crawler
     {
         return new Crawler();
     }
     
     /**
      * Explorarrrrrrrr
+     *
+     * @return true
      */
-    protected function explore(Url $actualUrl)
+    protected function explore(Url $actualUrl): bool
     {
         /**
          * $output['html'] = curl_exec($ch);
@@ -89,8 +94,10 @@ class Spider
 
     /**
      * Segue e explora os outros links tambem !
+     *
+     * @return true
      */
-    public function exploreInLot(array $othersLinks, $followOtherDomain = false)
+    public function exploreInLot(array $othersLinks, $followOtherDomain = false): bool
     {
         foreach($othersLinks as $indice=>$link) {
             if ($followOtherDomain || !\Validate\Url::outOfDomain($link, $this->domain->url)) {
@@ -105,11 +112,13 @@ class Spider
      * Returns filesize in human readable terms
      *
      * Inspired by code available at http://stackoverflow.com/questions/1222245/calculating-script-memory-usages-in-php
-     * Code distributed under CC-Wiki License (http://creativecommons.org/licenses/by-sa/2.5/) 
+     * Code distributed under CC-Wiki License (http://creativecommons.org/licenses/by-sa/2.5/)
      *
      * @params int $size filesize in bytes
+     *
+     * @return string
      */
-    public function fileSize($size)
+    public function fileSize($size): string
     {
         $filesizename = array(" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB");
         return $size ? round($size/pow(1024, ($i = floor(log($size, 1024)))), 2) . $filesizename[$i] : '0 Bytes';
@@ -126,9 +135,12 @@ class Spider
      *
      * @params string $link URL to add
      * @params int $clicks number of clicks from initial page
+     *
      * @return bool true on sucess, false on fail
+     *
+     * @param int|null $clicks
      */
-    protected function saveUrl($urlLink,$clicks = null,$crawl_tag = null)
+    protected function saveUrl($urlLink,?int $clicks = null,$crawl_tag = null)
     {
         return Url::create(
             [
@@ -144,9 +156,12 @@ class Spider
      *
      * @params int $form ID of linking page
      * @params int $to ID of target page
+     *
      * @return int|bool LinkID on sucess, false on fail
+     *
+     * @param Url|bool $from
      */
-    protected function saveLink($from, $to)
+    protected function saveLink($from, bool $to)
     {
         if ($from == $to) {
             return false;

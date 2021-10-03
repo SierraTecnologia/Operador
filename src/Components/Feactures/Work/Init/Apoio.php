@@ -5,7 +5,7 @@ namespace Operador\Components\Feactures\Work\Init;
 class Apoio
 {
 
-    public function rules()
+    public function rules(): void
     {
         // Faze Descobrimento
 
@@ -18,7 +18,12 @@ class Apoio
         // Estudar setores da empresa
     }
 
-    public function create()
+    /**
+     * @return array
+     *
+     * @psalm-return array<empty, empty>
+     */
+    public function create(): array
     {
         return [
             

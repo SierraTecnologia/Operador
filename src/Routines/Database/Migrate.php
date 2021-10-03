@@ -40,13 +40,13 @@ class Migrate extends ActionCollection
      */
     public $externalTargetOneInstance = false;
 
-    public function prepareTargets(DatabaseCollection $target, Database $toMigrate)
+    public function prepareTargets(DatabaseCollection $target, Database $toMigrate): void
     {
         $this->targetZeroInstance = $target;
         $this->targetOneInstance = $toMigrate;
     }
     
-    public function prepareActions()
+    public function prepareActions(): void
     {
         // // Inclui um Baclup na etapa 0 com alvo 0
         // $this->includeCollection((new Backup), 0, 0);

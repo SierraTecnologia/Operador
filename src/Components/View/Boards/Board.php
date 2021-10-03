@@ -68,8 +68,12 @@ class Board
 
     /**
      * FUncoes para os Controllers Internos
+     *
+     * @return array
+     *
+     * @psalm-return list<mixed>
      */
-    public static function getModels()
+    public static function getModels(): array
     {
         $Boards = self::loadBoards();
         $models = [];
@@ -86,8 +90,12 @@ class Board
 
     /**
      * FUncoes para os Controllers Internos
+     *
+     * @return array
+     *
+     * @psalm-return list<mixed>
      */
-    public static function getOnlyBoardsForModel($model)
+    public static function getOnlyBoardsForModel($model): array
     {
         $Boards = self::loadBoards();
         $onlyModelBoards = [];
@@ -221,7 +229,7 @@ class Board
 
     }
 
-    protected static function insertBoard($cod, $classAfetada, $classAExecutar, $type)
+    protected static function insertBoard(string $cod, string $classAfetada, string $classAExecutar, $type): self
     {
         $newBoard = new self($cod, $classAfetada, $classAExecutar, $type);
         return $newBoard;

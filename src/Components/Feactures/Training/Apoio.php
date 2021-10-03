@@ -5,7 +5,12 @@ namespace Operador\Components\Feactures\Training;
 class Apoio
 {
 
-    public function plataforms()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: Integrations\Connectors\Coursera\Coursera::class, 1: Integrations\Connectors\Youtube\Youtube::class}
+     */
+    public function plataforms(): array
     {
         return [
             Integrations\Connectors\Coursera\Coursera::class,
@@ -13,7 +18,12 @@ class Apoio
         ];
     }
 
-    public function create()
+    /**
+     * @return array
+     *
+     * @psalm-return array<empty, empty>
+     */
+    public function create(): array
     {
         return [
             

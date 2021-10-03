@@ -42,7 +42,12 @@ class Iis
         ),
     );
 
-    function loadSoftware()
+    /**
+     * @return (bool|mixed)[]
+     *
+     * @psalm-return array{name: mixed, desc: mixed, home: mixed, notes: mixed, load: bool}
+     */
+    function loadSoftware(): array
     {
         return array(
             'name'    => __('IIS'),
@@ -54,7 +59,7 @@ class Iis
     }
 
 
-    function getConfig( $type , $file , $software , $counter )
+    function getConfig( $type , $file , $software , $counter ): string
     {
 
         $file_json_encoded = json_encode($file);

@@ -10,12 +10,17 @@ use Log;
 class PersonalBoard extends Board
 {
 
-    protected function dashboard()
+    protected function dashboard(): void
     {
 
     }
 
-    protected function getInteresses()
+    /**
+     * @return array
+     *
+     * @psalm-return array<empty, empty>
+     */
+    protected function getInteresses(): array
     {
         $routines = [
             // Capturar Noticias via Rss
@@ -32,7 +37,9 @@ class PersonalBoard extends Board
     }
 
     /**
-     * 
+     * @return string[]
+     *
+     * @psalm-return array{0: BusinessBoard::class}
      */
     public function getBoards()
     {

@@ -37,7 +37,7 @@ class FromRepository implements \Operador\Contracts\Robot
 
     protected $isComplete = false;
 
-    protected function completeRunner($runner)
+    protected function completeRunner($runner): void
     {
         $this->executedActions = $this->executedActions+1;
         $this->notice('Runner Completada. Concluido:'.$this->getPorcDone());
@@ -53,6 +53,9 @@ class FromRepository implements \Operador\Contracts\Robot
         return $this->runners[$this->actualStage];
     }
 
+    /**
+     * @return static|true
+     */
     public function prepare()
     {
         if ($this->isPrepared) {
@@ -77,6 +80,9 @@ class FromRepository implements \Operador\Contracts\Robot
         return $this;
     }
 
+    /**
+     * @return void
+     */
     public function execute()
     {
         foreach($this->runners as $indice=>$runner) {
@@ -85,11 +91,17 @@ class FromRepository implements \Operador\Contracts\Robot
         }
     }
 
+    /**
+     * @return static
+     */
     public function done()
     {
         return $this;
     }
 
+    /**
+     * @return void
+     */
     public function run()
     {
         $this->prepare();
@@ -97,7 +109,7 @@ class FromRepository implements \Operador\Contracts\Robot
         $this->done();
     }
 
-    public function totalStages()
+    public function totalStages(): int
     {
         return count($this->actionsToExecute);
     }
@@ -108,7 +120,7 @@ class FromRepository implements \Operador\Contracts\Robot
         return $this->$variableName;
     }
 
-    private function getNamberName($number)
+    private function getNamberName($number): string
     {
         if ($number == 0 ) {
             return 'Zero';
@@ -150,13 +162,13 @@ class FromRepository implements \Operador\Contracts\Robot
         return Single::divide(Single::multiply([$this->executedActions], 100), $this->getTotalActionsCount())[0];
     }
 
-    public function newAction($action, int $stage = 0, int $actorNumber = 0)
+    public function newAction($action, int $stage = 0, int $actorNumber = 0): void
     {
         $this->actionsToExecute[$stage][] = $action;
         $this->actionsActors[$stage][] = $actorNumber;
     }
 
-    public function includeCollection(ActionCollection $collection, $stage, $action)
+    public function includeCollection(ActionCollection $collection, $stage, $action): void
     {
         // @todo Fazer
     }
@@ -166,7 +178,7 @@ class FromRepository implements \Operador\Contracts\Robot
         return $this->paramsToExecute;   
     }
 
-    public function initProcess()
+    public function initProcess(): void
     {
         
     }

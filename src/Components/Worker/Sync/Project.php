@@ -20,7 +20,7 @@ class Project
         $this->project = $project;
     }
 
-    public function execute()
+    public function execute(): void
     {
         // $this->project;
 

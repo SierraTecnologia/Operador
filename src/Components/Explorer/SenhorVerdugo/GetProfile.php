@@ -11,7 +11,7 @@ use Artisan;
 
 class GetProfile
 {
-    public static function run($profileUrl)
+    public static function run($profileUrl): void
     {
         QueryList::get($profileUrl)->find('.joms-app--wrapper > .app-box-content > ul')->map(
             function ($bloco) {
@@ -59,7 +59,7 @@ class GetProfile
     }
 
 
-    public function almaDoInput()
+    public function almaDoInput(): void
     {
         // Capturar Tests do BdsmTest.Org
         /**

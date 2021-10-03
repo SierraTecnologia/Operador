@@ -23,7 +23,7 @@ class PreenchedorDeFormulario
         $this->person = $person;
     }
 
-    public function executeForm($formInstance)
+    public function executeForm($formInstance): void
     {
         $form = $ql->get('https://github.com/login')->find('form');
         $formFields = $formInstance->fields()->get();
@@ -32,12 +32,17 @@ class PreenchedorDeFormulario
         }
     }
 
-    protected function newFakePerson()
+    protected function newFakePerson(): void
     {
         // @todo PEgar via Factory
     }
 
-    protected function getFields()
+    /**
+     * @return array
+     *
+     * @psalm-return array{login: mixed, email: mixed}
+     */
+    protected function getFields(): array
     {
         return [
             'login' => $this->person->login,

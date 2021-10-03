@@ -57,8 +57,10 @@ class OperadorProvider extends ServiceProvider
     
     /**
      * Alias the services in the boot.
+     *
+     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
     }
 

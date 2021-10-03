@@ -125,7 +125,10 @@ class TaskComponent extends ActionBase
         return self::getSyncs(self::getHooks(self::getRoutines(self::getSpiders())));
     }
 
-    public static function getActionByCode($cod)
+    /**
+     * @param string $cod
+     */
+    public static function getActionByCode(string $cod)
     {
         $actions = self::loadActions();
         foreach($actions as $action) {

@@ -27,7 +27,7 @@ class SearchFollows
         return $this->cleanFailedTargets();
     }
     
-    public function cleanFailedTargets()
+    public function cleanFailedTargets(): void
     {
         //@todo Busca alvos que nao seguiram de volta e para de seguir e coloca como naoFuncionou !
     }
@@ -49,16 +49,20 @@ class SearchFollows
 
     /**
      * Verifica se já foi alvo dessa ação!
+     *
+     * @return void
      */
-    public function isRepeat($user)
+    public function isRepeat($user): void
     {
 
     }
 
     /**
      * Verifica se já foi alvo dessa ação!
+     *
+     * @return void
      */
-    public function init($user)
+    public function init($user): void
     {
 
     }

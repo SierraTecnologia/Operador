@@ -4,7 +4,7 @@ namespace Operador\Components\Worker\Logging;
 
 class Logging
 {
-    public function findForLogsInServer()
+    public function findForLogsInServer(): array
     {
         $software           = $_POST['so'];
         $softuser           = array();

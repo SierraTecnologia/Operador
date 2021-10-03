@@ -49,12 +49,12 @@ class ImportRoutine extends ActionCollection
         return parent::execute();
     }
 
-    public function prepareTargets(Token $token)
+    public function prepareTargets(Token $token): void
     {
         $this->externalTargetZeroInstance = $token;
     }
 
-    public function hasTargets()
+    public function hasTargets(): bool
     {
         if ($this->externalTargetZeroInstance === false) {
             return false;

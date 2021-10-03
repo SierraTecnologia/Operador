@@ -18,6 +18,9 @@ list( $badges , $files , $tz ) = config_load();
 |--------------------------------------------------------------------------
 |
 */
+/**
+ * @return null|true
+ */
 function myErrorHandler( $errno, $errstr, $errfile, $errline )
 {
     global $return;
@@ -49,7 +52,7 @@ $old_error_handler = set_error_handler("myErrorHandler");
 
 register_shutdown_function('shutdown');
 
-function shutdown()
+function shutdown(): void
 {
     $error = error_get_last();
     if ($error['type'] === E_ERROR ) {
