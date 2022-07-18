@@ -4,14 +4,14 @@ namespace Operador\Components\Worker\Explorer\Dusk;
 
 use Laravel\Dusk\Page as BasePage;
 
-class OpenSite extends Page
+class ForceBrute extends Page
 {
-    
+
     public function url()
     {
         return 'https://www.municipalonlinepayments.com';
     }
-    
+
     /**
      * Assert that the browser is on the page.
      *
