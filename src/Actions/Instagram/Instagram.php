@@ -15,6 +15,9 @@ class Instagram extends Connector
     public function __construct($instagram, $cache = false)
     {
         $this->account = $instagram;
+        if (!$this->account) {
+            throw new \Exception('Conta não cadastrada para conectar ao instagram');
+        }
         $this->userName = $this->account->getUser();
         // dd($instagram, $this->userName, $this->account->getPassword());
         // ($this->executor = \InstagramScraper\Instagram::withCredentials(
@@ -47,7 +50,7 @@ class Instagram extends Connector
         if (!$cache) {
             return '';
         }
-        
+
         return $cache;
     }
 
