@@ -20,13 +20,15 @@ class Instagram extends Connector
         }
         $this->userName = $this->account->getUser();
         // dd($instagram, $this->userName, $this->account->getPassword());
-        // ($this->executor = \InstagramScraper\Instagram::withCredentials(
-        //     new \GuzzleHttp\Client(),
-        //     $this->userName,
-        //     $this->account->getPassword(),
-        //     $this->getCache($cache)
-        // ))->login();
-        $this->executor =  new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+        $this->executor = \InstagramScraper\Instagram::withCredentials(
+            new \GuzzleHttp\Client(),
+            $this->userName,
+            $this->account->getPassword(),
+            $this->getCache($cache)
+        );
+        // dd($this->executor);
+        $this->executor->login();
+        // $this->executor =  new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
     }
 
     public function getSlug()
@@ -46,7 +48,9 @@ class Instagram extends Connector
 
     private function getCache($cache)
     {
-
+        if (class_exist('\Phpfastcache\Helper\Psr16Adapter')) {
+            return new Psr16Adapter('Files');
+        }
         if (!$cache) {
             return '';
         }
