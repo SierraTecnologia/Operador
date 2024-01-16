@@ -5,7 +5,7 @@
 
 namespace Operador\Components\Worker\Sync\Database;
 
-use Fabrica\Tools\Databases\Mysql\Mysql as MysqlTool;
+use Integrations\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Fabrica\Models\Infra\DatabaseCollection;
 use Operador\Contracts\ActionInterface;
 

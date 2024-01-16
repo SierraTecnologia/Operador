@@ -186,7 +186,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'analyseComit',
-            \Fabrica\Models\Code\Commit::class,
+            \Finder\Models\Code\Commit::class,
             \App\Boards\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -196,7 +196,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'deployCommit',
-            \Fabrica\Models\Code\Commit::class,
+            \Finder\Models\Code\Commit::class,
             \App\Boards\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -220,7 +220,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'syncProject',
-            \Fabrica\Models\Code\Project::class,
+            \Finder\Models\Code\Project::class,
             \App\Boards\Worker\Sync\Project::class,
             self::$hook
         );

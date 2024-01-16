@@ -197,7 +197,7 @@ class TaskComponent extends ActionBase
          */
         $actions[] = self::insertAction(
             'analyseComit',
-            \Fabrica\Models\Code\Commit::class,
+            \Finder\Models\Code\Commit::class,
             \Operador\Components\Worker\Analyser\Analyser::class,
             self::HOOK
         );
@@ -207,7 +207,7 @@ class TaskComponent extends ActionBase
          */
         $actions[] = self::insertAction(
             'deployCommit',
-            \Fabrica\Models\Code\Commit::class,
+            \Finder\Models\Code\Commit::class,
             \Operador\Components\Worker\Deploy\Deploy::class,
             self::HOOK
         );
@@ -232,7 +232,7 @@ class TaskComponent extends ActionBase
          */
         $actions[] = self::insertAction(
             'syncProject',
-            \Fabrica\Models\Code\Project::class,
+            \Finder\Models\Code\Project::class,
             \Operador\Components\Worker\Sync\Project::class,
             self::ROUTINE
         );
